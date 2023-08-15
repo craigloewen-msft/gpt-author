@@ -1,0 +1,22 @@
+{
+    "name": "Tensorflow Dev Container",
+    "dockerFile": "Dockerfile",
+    "build": {
+        "args": {
+            "IMAGE_TYPE": "-gpu"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    },
+    // Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+    "runArgs": [
+        "--gpus=all"
+    ],
+    "remoteUser": "root",
+    "postCreateCommand": "pip install -r ./requirements.txt"
+}
